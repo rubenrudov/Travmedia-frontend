@@ -1,0 +1,100 @@
+App documentation - "Travmedia":
+
+Overview:
+    "Travmedia" is an Android mobile app created and developed by Ruben Rudov.
+    The app is for travelers who want to share their knowledge about everything that connected to traveling such as:
+    traveling equipment, hiking trails, tips and receipts for outdoor cooking and so on...
+    The app is user friendly and it's registration for new users is very simply, the user have to provide only 3 elements:
+    his preferred username, email and preferred password.
+
+
+Activities:
+-----------
+Welcome screen:
+    Includes 3 elements: background image and 2 buttons.
+    The first button redirects to the registration page for new users.
+    The second button redirects to the login page for registered users.
+    The background picture is a randomly selected picture from the BackgroundHandling's array pf links -
+    - the app uses the Glide module (the module's use is displaying pictures from the app resources, the internet and more..) -
+    for displaying the background.
+
+
+Register screen:
+    Includes 5 elements: background image, 3 edit texts (input boxes) for user input and submit button.
+    Edittexts: Username, Email and Password.
+    Button: standard submit button.
+    The background picture is a randomly selected picture from the BackgroundHandling's array pf links -
+    - the app uses the Glide module (the module's use is displaying pictures from the app resources, the internet and more..) -
+    for displaying the background.
+
+
+Login screen:
+    Includes 4 elements: background image, 2 edit texts (input boxes) for user input and submit button.
+    Edittexts: Username and Password.
+    Button: standard submit button.
+    The background picture is a randomly selected picture from the BackgroundHandling's array pf links -
+    - the app uses the Glide module (the module's use is displaying pictures from the app resources, the internet and more..) -
+    for displaying the background.
+
+
+Home screen:
+    Includes a recycler view of posts (each post is based on Post.java class)
+    onClickItem of post will open a dialog with the whole information of the post (the recyclerview item
+    shows only detailed information...).
+    In this activity data will be taken from the database through the server.
+
+
+Navigator screen:
+    Includes a view of a google maps map with searching option (Input box)
+    onClick submit button of the input box -> searching the location (in version 1.0).
+    Optional addition is including a direction routing system as a part of this feature.
+
+
+Post uploading screen:
+    Includes a view with 2 Input boxes, the first for a title and the second for content
+    In this activity data will be inserted into the database through the server.
+    In a more advanced version the app would stand in picture uploading.
+
+
+Data models:
+-------------
+User:
+    Each User has 3 String properties: username, email and password.
+
+
+Post:
+    Each Post has 4 String properties: publisher, title, content and uploading date & time.
+
+
+Handlers and Adapters:
+----------------------
+BackgroundHandling:
+    Class for randomizing backgrounds in the visitor-session screens (Welcome, Register and Login).
+    The handler is optional, if the phone is not responding to the glide module functions then,
+    the background will be the default background (main/res/drawable/camp.png)
+
+
+DataHelper:
+    Class for supporting data transfer between the client and the server.
+
+
+PostAdapter:
+    Class for handling the recycler view.
+
+
+Menu:
+-----
+    The menu has 3 items which represent the 3 activities that available for logged in users: Navigator, Home and Upload.
+    This is a bottom navigation bar built with using of the next library: 'com.google.android.material:material:1.2.1'
+
+
+
+P.S - for class documentation you can see the tables in "com.travmedia.documentations.charts_and_table"
+
+
+More ideas for next version: Weather by countries (USA - LA, NYC, Miami,
+                                                    Canada - Vancouver & Toronto,
+                                                    Israel - TLV, Jerusalem,
+                                                    Russia - Moscow, St petersburg
+                                                    Japan - Tokyo
+                                                    Italy - Rome)....
