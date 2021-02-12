@@ -17,7 +17,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 
 public class SocketTask extends AsyncTask<JSONObject, Void, JSONObject> {
-    private final static String IP_ADDRESS = "192.168.1.233";    // Host's IP address in the LAN
+    private final static String IP_ADDRESS = "XXX.XXX.XXX.XXX";    // Host's IP address in the LAN
     private static final int PORT = 8080;       // HTTP port
     private static final int PACKET_SIZE = 1024;    // standard 1kb packet size
 
